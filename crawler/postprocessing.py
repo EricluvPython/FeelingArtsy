@@ -3,7 +3,7 @@ import csv
 from tqdm import tqdm
 import shutil
 
-def postprocess(folder_path,output_file="output.csv"):
+def postprocess(folder_path,output_file="../output.csv"):
     # open a new csv file for results
     with open(output_file, 'w', newline='') as csvfile:
         writer = csv.writer(csvfile)
@@ -13,7 +13,7 @@ def postprocess(folder_path,output_file="output.csv"):
         for file_name in file_list:
             writer.writerow([file_name, file_name[0]])
 
-def renameimgs(folder_path_list,output_dir="./images"):
+def renameimgs(folder_path_list,output_dir="../images"):
     for fpindex in range(len(folder_path_list)):
         # the index is the label
         folder_path = folder_path_list[fpindex]
@@ -26,7 +26,7 @@ def renameimgs(folder_path_list,output_dir="./images"):
 
 if __name__ == "__main__":
     # for some weird reasons, working directory for this program doesn't seem to be in the crawler folder
-    folder_path_list = ["./crawler/0","./crawler/1","./crawler/2","./crawler/3"]
+    folder_path_list = ["0","1"]
     renameimgs(folder_path_list)
-    postprocess("./images","output.csv")
+    postprocess("../images","../output.csv")
     print("Done")

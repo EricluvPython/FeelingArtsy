@@ -31,7 +31,7 @@ def google_image_url_from_webpage(driver, max_number):
                 break # found no more new images, exit
             thumb_elements_old = thumb_elements
             driver.execute_script("window.scrollTo(0, document.body.scrollHeight);") # scroll to find more images
-            time.sleep(1) # to give time for scrolling
+            time.sleep(3) # to give time for scrolling
             show_more = driver.find_elements(By.CLASS_NAME, "mye4qd")
             if len(show_more) == 1 and show_more[0].is_displayed() and show_more[0].is_enabled():
                 show_more[0].click() # show more images on webpage

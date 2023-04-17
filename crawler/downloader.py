@@ -50,7 +50,7 @@ def download_image(image_url, dst_dir, file_name, timeout=20):
             break
 
 # automatically download images from image urls with multithread
-def download_images(image_urls, dst_dir="./downloaded", file_prefix="img", timeout=20):
+def download_images(image_urls, dst_dir="./downloaded", file_prefix="img", timeout=40):
     
     socket.setdefaulttimeout(timeout)
     # proletariats
